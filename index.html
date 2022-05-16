@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Ghibli API</title>
+    <script
+      src="https://kit.fontawesome.com/c5dc02393b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Josefin+Sans&family=Koulen&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header-container"></header>
+    <div id="app">
+      <div class="cards-container">
+        <div class="card" v-for="pelicula in peliculas">
+          <h3 class="name-movie">{{pelicula.title}}</h3>
+          <img
+            :src="pelicula.image"
+            :alt="pelicula.title"
+            :title="pelicula.description"
+          />
+          <i
+            class="fa-solid fa-heart fav-icon"
+            :class="pelicula.id"
+            v-if="fav.indexOf(pelicula.id) == -1"
+            @click="favBtn(pelicula.id) "
+          ></i>
+          <i
+            class="fa-solid fa-heart fav-icon"
+            id="anim"
+            :class="pelicula.id"
+            v-if="fav.indexOf(pelicula.id) != -1"
+            style="color: red"
+            @click="favBtn(pelicula.id) "
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer-container"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
