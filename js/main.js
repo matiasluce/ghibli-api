@@ -10,6 +10,15 @@ document.getElementById("header-container").innerHTML = `
              </ul>
         </nav>
     </div>
+`;
+
+document.getElementById("footer-container").innerHTML = `
+    <h4>&copy; 2022 Matías Lucero</h4>
+    <div class="social">
+        <a href="https://github.com/matiasluce"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-reddit"></i></i></a>
+    </div>
 `
 
 const app = new Vue({
@@ -61,3 +70,17 @@ const app = new Vue({
         }
     }
 })
+
+
+const topbtn = document.querySelector('.icon-top');
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    topbtn.style.visibility = "visible";
+    topbtn.style.animationPlayState="running"
+  } else {
+    topbtn.style.visibility = "hidden";
+  }
+}

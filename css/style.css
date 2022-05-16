@@ -10,6 +10,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -126,4 +127,62 @@ header .hero-container{
 
 .cards-container .card i:hover{
     cursor: pointer;
+}
+
+.text-fav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font1);
+    font-size: 4vw;
+    color: #EEEEEE;
+}
+
+.icon-top{
+    visibility: hidden;
+}
+
+.icon-top a{
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 7px;
+    text-decoration: none;
+    color: black;
+    background-color: #EEEEEE;
+    padding: 10px;
+    border-radius: 5px 20px 5px;
+    box-shadow: 1px 2px 3px black;
+}
+
+#footer-container h4{
+    font-family: var(--font3);
+    font-size: 2vw;
+}
+
+#footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgba(255,255,255,.3);
+    padding: 15px;
+}
+
+#footer-container .social{
+    padding-top: 5px;
+}
+
+#footer-container a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 2px 5px rgb(87, 86, 86);
+    font-size: 1.7vw;
+    padding: 0 10px;
+    transition: color .3s;
+}
+
+#footer-container a:hover{
+    color: rgb(60, 60, 60);
 }
